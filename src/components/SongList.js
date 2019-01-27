@@ -1,5 +1,7 @@
 // can directly import the Component class
 import React, { Component } from 'react';
+// import the connect function, notice lower case
+import { connect } from 'react-redux';
 
 // no longer need to use React.Component call
 class SongList extends Component {
@@ -8,4 +10,6 @@ class SongList extends Component {
     }
 };
 
-export default SongList;
+// valid JavaScript syntax using connect on SongList
+// "A function that returns a function, calling this function"
+export default connect()(SongList);
