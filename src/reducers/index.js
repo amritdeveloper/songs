@@ -1,3 +1,6 @@
+// a named export (since outside library)
+import { combineReducers } from 'redux';
+
 const songsReducer = () => {
   return [
     { title: "Smells Like Teen Spirit", duration: "5:01" },
@@ -14,3 +17,10 @@ const selectedSongReducer = (selectedSong=null, action) => {
 
     return selectedSong;
 };
+
+// making use of the combineReducers function, passing an object;
+// export using default
+export default combineReducers({
+  songs: songsReducer,
+  selectedSong: selectedSongReducer
+});
