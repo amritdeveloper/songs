@@ -8,8 +8,12 @@ import { selectSong } from "../actions";
 
 // no longer need to use React.Component call
 class SongList extends Component {
+  // renderList() is a helper method that is called below
+  // in the render method
   renderList() {
+    // outer return will provide the array of list elements
     return this.props.songs.map(song => {
+      // inner return provides the JSX elements for each song
       return (
         <div className="item" key={song.title}>
           <div className="right floated content">
@@ -35,7 +39,6 @@ class SongList extends Component {
 // takes data from state object and converts those to props in the current
 // component (in this case SongList)
 const mapStateToProps = state => {
-  console.log(state);
   // this state object will automatically become props in SongList
   return { songs: state.songs };
 };
