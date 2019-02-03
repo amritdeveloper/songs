@@ -3,9 +3,12 @@ import { connect } from 'react-redux';
 
 // SongDetail will be a functional component
 // the Redux connect component can work with functional components
-const SongDetail = (props) => {
-    console.log(props);
-    return <div>Song Detail</div>;
+// again the use of destructuring for props
+const SongDetail = ({ song }) => {
+    if (!song) {
+        return <div>Select a song</div>
+    }
+    return <div>{song.title}</div>;
 };
 
 // mapStateToProps function is called with the state object
